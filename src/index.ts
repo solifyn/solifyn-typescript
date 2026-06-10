@@ -20,3 +20,4 @@ export * from './services/payment.service';
 export * from './services/orders.service';
 export * from './services/brands.service';
 export * from './services/refund-requests.service';
+export * from './services/github.service';

@@ -16,6 +16,7 @@ import { RefundsService } from './services/refunds.service';
 import { OrdersService } from './services/orders.service';
 import { BrandsService } from './services/brands.service';
 import { RefundRequestsService } from './services/refund-requests.service';
+import { GithubService } from './services/github.service';
 
 export interface SolifynConfig {
   apiKey: string;
@@ -41,6 +42,7 @@ export class Solifyn {
   public readonly orders: OrdersService;
   public readonly brands: BrandsService;
   public readonly refundRequests: RefundRequestsService;
+  public readonly github: GithubService;
 
   constructor(config: SolifynConfig) {
     if (!config || !config.apiKey) {
@@ -67,5 +69,6 @@ export class Solifyn {
     this.orders = new OrdersService(apiKey, baseURL);
     this.brands = new BrandsService(apiKey, baseURL);
     this.refundRequests = new RefundRequestsService(apiKey, baseURL);
+    this.github = new GithubService(apiKey, baseURL);
   }
 }
